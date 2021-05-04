@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# this script maps the current working directory into /home/pessto/data within the container.
+# to run the container, create an alias in your .bashrc (or shell of your choice) 
+# alias pyraf="/Users/<username>/path/to/pesstopipeline/pesstopipeline"
+
+
+xhost + 127.0.0.1 > /dev/null 2>&1
+
+docker run -ti --user=root --rm \
+    -e DISPLAY=host.docker.internal:0 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $PWD:/home/pessto/data \
+     afloers/pesstopipeline \
+    /bin/bash
+
+xhost - 127.0.0.1 > /dev/null 2>&1
