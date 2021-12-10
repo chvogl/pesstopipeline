@@ -4,17 +4,21 @@ PESSTO NTT Pipeline Docker Image
 Installation:
 ====================
 
-This script activates a Docker container with an iraf/pyraf installation and the pessto quickreduction pipeline ( see https://github.com/svalenti/pessto.
+This script activates a Docker container with an iraf/pyraf installation and the pessto quickreduction pipeline ( see https://github.com/svalenti/pessto ). To activate the script, a working installation of Docker is required.
 
 First, activate the option ‘Allow connections from network clients’ in your XQuartz settings.
 
-To run the script, create an alias in the config file of your preferred shell, e.g.
+To conveniently run the script, create an alias in the config file of your preferred shell, e.g.
 
-    alias pyraf="/Users/<username>/path/to/pesstopipeline/pesstopipeline"
+    alias pyraf="/Users/<username>/path/to/pesstopipeline/pyraf_pesstopipeline"
 
 Then run the script by typing 
 
     pyraf
+    
+If you want to use a different command to start the docker container, simply name the alias differently, e.g. 
+
+    alias custom_pyraf_start_command="/Users/<username>/path/to/pesstopipeline/pyraf_pesstopipeline"
 
 The script automatically mounts the folder from which it is run to /home/pessto/data/<folder_from_which_it_is_started>.
 
@@ -52,3 +56,5 @@ You can run `PESSTOFASTSPEC` or `pyraf` from any directory:
     Python/CL command line wrapper
       .help describes executive commands
     -->
+
+Note: The stecf iraf package is no longer available on github. Among others, the PESSTOEFOSCPHOT method depends on stecf and thus doesn't work with this container.
