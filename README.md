@@ -8,9 +8,20 @@ This script activates a Docker container with an iraf/pyraf installation and the
 
 First, activate the option ‘Allow connections from network clients’ in your XQuartz settings.
 
+This docker container has been created for use on the M1 MacBooks. If you are using a MacBook with an Intel processor, comment out 
+
+    -e DISPLAY=host.docker.internal:0 \
+
+and add the following line:
+
+    -e DISPLAY=docker.for.mac.host.internal:0 \  # uncomment this if you use a Mac with an Intel processor
+
+This container has not been tested on Linux.
+
 To conveniently run the script, create an alias in the config file of your preferred shell, e.g.
 
     alias pyraf="/Users/<username>/path/to/pesstopipeline/pyraf_pesstopipeline"
+    
 
 Then run the script by typing 
 
