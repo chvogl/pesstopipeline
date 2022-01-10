@@ -29,7 +29,7 @@ Then run the script by typing
     
 If you want to use a different command to start the docker container, simply name the alias differently, e.g. 
 
-    alias custom_pyraf_start_command="/Users/<username>/path/to/pesstopipeline/pyraf_pesstopipeline"
+    alias custom_pyraf_start_command="bash /Users/<username>/path/to/pesstopipeline/pyraf_pesstopipeline"
 
 The script automatically mounts the folder from which it is run to /home/pessto/data/<folder_from_which_it_is_started>.
 
