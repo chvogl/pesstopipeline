@@ -2,7 +2,7 @@
 
 # this script maps the current working directory into /home/pessto/data within the container.
 # to run the container, create an alias in your .bashrc (or shell of your choice) 
-# alias pyraf="/Users/<username>/path/to/pesstopipeline/pesstopipeline"
+# alias pyraf="bash /Users/<username>/path/to/pesstopipeline/pesstopipeline"
 
 
 xhost + 127.0.0.1 > /dev/null 2>&1
